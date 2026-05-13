@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revelación de Género 💙🎀</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Firebase -->
+  <script type="module" src="app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+
+  <main class="container">
+
+    <img
+      class="stitch"
+      src="https://i.imgur.com/NM8XzZk.png"
+      alt="Stitch"
+    />
+
+    <h1>¿Niño o Niña? 👶</h1>
+
+    <p class="subtitle">
+      Vota y descubre el resultado el día de la revelación 💕
+    </p>
+
+    <!-- CONTADOR -->
+    <section class="countdown-box">
+      <h2>Cuenta regresiva ⏳</h2>
+
+      <div class="countdown">
+        <div>
+          <span id="days">00</span>
+          <small>Días</small>
+        </div>
+
+        <div>
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </div>
+
+        <div>
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </div>
+
+        <div>
+          <span id="seconds">00</span>
+          <small>Segundos</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="vote-card" id="voteCard">
+
+      <h2>Haz tu predicción ✨</h2>
+
+      <form id="voteForm">
+
+        <div class="input-group">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Ingresa tu nombre"
+          />
+
+          <small class="error-message" id="errorMessage">
+            El nombre es obligatorio 💕
+          </small>
+
+        </div>
+
+        <div class="buttons">
+
+          <button
+            type="button"
+            class="girl"
+            id="girlVote"
+          >
+            🎀 Niña
+          </button>
+
+          <button
+            type="button"
+            class="boy"
+            id="boyVote"
+          >
+            💙 Niño
+          </button>
+
+        </div>
+
+      </form>
+
+      <div class="already-voted hidden" id="alreadyVoted">
+        Ya registraste tu voto 🫶
+      </div>
+
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="results">
+
+      <h2>Resultados en tiempo real 📊</h2>
+
+      <div class="result-item">
+
+        <div class="label">
+          🎀 Niña
+          <span id="girlPercent">0%</span>
+        </div>
+
+        <div class="bar-bg">
+          <div class="bar pink" id="girlBar"></div>
+        </div>
+
+      </div>
+
+      <div class="result-item">
+
+        <div class="label">
+          💙 Niño
+          <span id="boyPercent">0%</span>
+        </div>
+
+        <div class="bar-bg">
+          <div class="bar blue" id="boyBar"></div>
+        </div>
+
+      </div>
+
+      <p class="votes-total">
+        <span id="totalVotes">0</span>
+        personas ya votaron 💕
+      </p>
+
+    </section>
+
+    <!-- SHARE -->
+    <button id="shareBtn" class="share-btn">
+      📲 Compartir por WhatsApp
+    </button>
+
+    <!-- REVELACIÓN -->
+    <section class="reveal hidden" id="revealSection">
+      <h1 id="revealText">¡Es niña! 🎀</h1>
+    </section>
+
+  </main>
+
+</body>
+</html>
